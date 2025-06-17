@@ -1,7 +1,7 @@
 # Textilin
 
 Программа для копирования текста с помощью OCR в Linux.
-Замена Textify для Linux
+
 ## Системные требования
 
 - Linux (Ubuntu/Debian/Mint, Fedora, Arch Linux)
@@ -30,6 +30,7 @@ sudo apt install tesseract-ocr-eng  # для английского языка
 # Установка зависимостей для скриншотов
 sudo apt install scrot  # для X11
 sudo apt install grim slurp  # для Wayland
+sudo apt install libxcb-cursor0
 ```
 
 ### Fedora
@@ -47,6 +48,7 @@ sudo dnf install tesseract-langpack-eng  # для английского язы�
 # Установка зависимостей для скриншотов
 sudo dnf install scrot  # для X11
 sudo dnf install grim slurp  # для Wayland
+sudo dnf install xcb-util-cursor
 ```
 
 ### Arch Linux
@@ -64,43 +66,29 @@ sudo pacman -S tesseract-data-eng  # для английского языка
 # Установка зависимостей для скриншотов
 sudo pacman -S scrot  # для X11
 sudo pacman -S grim slurp  # для Wayland
+sudo pacman -S xcb-util-cursor
+
 ```
 
 ## Установка программы
 
-### Вариант 1: Установка из исходного кода
+### Вариант 1: Использование AppImage (рекомендуется)
 
-1. Клонируйте репозиторий:
-```bash
-git clone https://github.com/Antonass/textilin.git
-cd textilin
-```
-
-2. Создайте и активируйте виртуальное окружение:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-3. Установите зависимости Python:
-```bash
-pip install -r requirements.txt
-```
 1. Скачайте последнюю версию Textilin-x86_64.AppImage
 2. Сделайте файл исполняемым:
 ```bash
-chmod +x create_appimage.sh
+chmod +x Textilin-x86_64.AppImage
 ```
 3. Запустите программу:
 ```bash
-./create_appimage.sh
+./Textilin-x86_64.AppImage
 ```
 
-### Вариант 2: Сборка AppImage
+### Вариант 2: Установка из исходного кода
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/Antonass/textilin.git
+git clone https://github.com/yourusername/textilin.git
 cd textilin
 ```
 
@@ -115,13 +103,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Сделайте файл исполняемым:
+4. Запустите программу:
 ```bash
-chmod +x create_appimage.sh
-```
-5. Запустите программу:
-```bash
-./create_appimage.sh
+python textify_linux.py
 ```
 
 ## Использование
